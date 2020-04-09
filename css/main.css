@@ -17,16 +17,25 @@ body{
 
 .container{
   width: 90%;
-  height: 90vh;
+  height: 95vh;
   background: white;
 }
 
 .container_img{
   width: 100%;
-  height: 80vh;
+  height: 85vh;
   border: 1px solid red;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.container_img i{
+  flex-basis: 60px;
+  font-size: 30px;
+}
+
 
 .container_img img{
   width: 100%;
@@ -34,11 +43,13 @@ body{
 /*display: block;*/
 }
 
-.container_img img.first{
+
+
+.container_img img.active{
   display: block; 
   /* display: none; */
 }
-
+ 
 .player{
   width: 100%;
   height: 10vh;
@@ -48,7 +59,7 @@ body{
 
 .left_arrow,
 .right_arrow{
-  flex-basis: 150px;
+  flex-basis: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
