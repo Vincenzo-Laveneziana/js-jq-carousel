@@ -56,7 +56,7 @@ $(document).ready(function () {
 
   function right(){
     if(activeImg.hasClass("last")){
-      nextImg = $("img.first");
+      nextImg = $("img.first"); 
     }
     activeImg.removeClass("active");
     nextImg.addClass("active");
@@ -82,13 +82,36 @@ $(document).ready(function () {
       right();
     }
 
-    //easter egg da implementare al momento non funzionante
+   /*  easter egg
+    premendo sequenzialmente i tasti v-i-n
+    automaticamente cambiarà tutte le immagini
+    anche se rimane bloccato nel terzo if 
+   */
    
-        if(e.keyCode == 78){
-          activeImg.attr('<img src="https://media.giphy.com/media/llOz4zgQCyCoYaRmBq/giphy.gif" ">')
-        }
-      
     
+
+    if(e.keyCode == 86){
+      console.log("Cambio-1");
+      $(document).keydown(function (e) { 
+
+        if(e.keyCode == 73){
+          console.log("Cambio-2");
+
+
+          $(document).keydown(function (e) { 
+
+            if(e.keyCode == 78){
+              console.log("Cambio-3");
+              //voglio che tutte le immagini siano cambiate
+              activeImg = $("img");
+              activeImg.attr( 'src',  "https://media.giphy.com/media/cOtvwSHKaFK3Ul1VVu/giphy.gif")
+              alert("Easter egg sbloccato, per rivedere tutte le immagini ricarica la pagina")
+               
+            }//if
+            
+          });
+        }
+      });
+    } ;
   });
-  
 });
