@@ -5,6 +5,16 @@ $(document).ready(function () {
   var activeImg = $("img.active");
   var prevImg = $(".active").prev("img"); 
   var nextImg = $(".active").next("img");
+
+
+  var activeCircle = $("i.select")
+  var prevCircle = $(".select").prev("i"); 
+  var nextCircle = $(".select").next("i");
+
+  activeCircle.click(function(){
+    console.log("selec");
+    
+  });
   
   leftArrow.click(function(){
     left();
@@ -19,16 +29,27 @@ $(document).ready(function () {
   function riuseVar() {
     nextImg = $(".active").next("img");
     prevImg = $(".active").prev("img");
+    prevCircle = $(".select").prev("i"); 
+    nextCircle = $(".select").next("i");
   }
 
 
   function left(){
+
+    
     if(activeImg.hasClass("first")){
       prevImg = $("img.last");
     }
     activeImg.removeClass("active");
     prevImg.addClass("active");
     activeImg = $(".active");
+
+    if(activeCircle.hasClass("first")){
+      prevCircle = $("i.last");
+    }
+    activeCircle.removeClass("select");
+    prevCircle.addClass("select");
+    activeCircle = $(".select");
     riuseVar()
   }
 
@@ -40,6 +61,14 @@ $(document).ready(function () {
     activeImg.removeClass("active");
     nextImg.addClass("active");
     activeImg = $(".active");
+    riuseVar()
+
+    if(activeCircle.hasClass("last")){
+      nextCircle = $("i.first");
+    }
+    activeCircle.removeClass("select");
+    nextCircle.addClass("select");
+    activeCircle = $(".select");
     riuseVar()
   }
 
@@ -54,13 +83,11 @@ $(document).ready(function () {
     }
 
     //easter egg da implementare al momento non funzionante
-    if(e.keyCode == 86){
-      if(e.keyCode == 73){
+   
         if(e.keyCode == 78){
-          $("img.active").html('<img class="first active" src="https://media.giphy.com/media/llOz4zgQCyCoYaRmBq/giphy.gif" ">')
+          activeImg.attr('<img src="https://media.giphy.com/media/llOz4zgQCyCoYaRmBq/giphy.gif" ">')
         }
-      }
-    }
+      
     
   });
   
