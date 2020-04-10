@@ -103,11 +103,12 @@ $(document).ready(function () {
             if(e.keyCode == 78){
               console.log("Cambio-3");
               //voglio che tutte le immagini siano cambiate
-              alert("Easter egg sbloccato, per rivedere tutte le immagini ricarica la pagina ")
               activeImg = $("img");
               activeImg.attr( 'src',  "https://media.giphy.com/media/l4FGwoR4qzoaJxVW8/giphy.gif")
               
-              $(".container").fadeOut(3000);
+              $(".container").fadeOut(4000, function(){
+                alert("Easter egg sbloccato, per rivedere tutte le immagini ricarica la pagina ")
+              });
                
             }//if
             
