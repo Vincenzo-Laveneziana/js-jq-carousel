@@ -110,7 +110,9 @@ $(document).ready(function () {
                 alert("Easter egg sbloccato, per rivedere tutte le immagini ricarica la pagina ")
               });
                
-            }//if
+            }else{
+              location.reload();
+            }
             
           });
         }
