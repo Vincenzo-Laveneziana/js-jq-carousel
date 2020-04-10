@@ -97,15 +97,17 @@ $(document).ready(function () {
         if(e.keyCode == 73){
           console.log("Cambio-2");
 
-
+          
           $(document).keydown(function (e) { 
-
+            
             if(e.keyCode == 78){
               console.log("Cambio-3");
               //voglio che tutte le immagini siano cambiate
+              alert("Easter egg sbloccato, per rivedere tutte le immagini ricarica la pagina ")
               activeImg = $("img");
-              activeImg.attr( 'src',  "https://media.giphy.com/media/cOtvwSHKaFK3Ul1VVu/giphy.gif")
-              alert("Easter egg sbloccato, per rivedere tutte le immagini ricarica la pagina")
+              activeImg.attr( 'src',  "https://media.giphy.com/media/l4FGwoR4qzoaJxVW8/giphy.gif")
+              
+              $(".container").fadeOut(3000);
                
             }//if
             
